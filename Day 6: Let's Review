@@ -1,0 +1,21 @@
+function processData(input) {
+    //Enter your code here
+    input = input.split('\n');
+    for(let i=1; i<input.length; i++){
+        var splittedWord = input[i].split('');
+        
+        
+        let even = '';
+        let odd = '';
+        
+        for(let j=0; j< splittedWord.length; j++){
+            if(j % 2 === 0){
+                even =even + splittedWord[j];
+            }else{
+                odd = odd + splittedWord[j];
+            }
+        }
+        
+        console.log(even + ' ' + odd );
+    }
+} 
