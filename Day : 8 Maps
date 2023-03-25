@@ -1,0 +1,38 @@
+function processData(input) {
+    //Enter your code here
+    //declared an empty array
+    const myMap = [];
+    //took the input string and converted into an array  and separate with newline character format
+    input = input.split("\n");
+    
+    //took the first element from the input 
+    const n = input[0];
+    
+    //using for loop pushed the spliited names and phone number into the myMap array
+    for(let i=1; i<=n;i++){
+        // console.log(input[i].split(" "))
+        const splittedTerms = input[i].split(" ");
+        myMap.push(splittedTerms)  
+    }
+    // console.log(myMap)
+    
+    
+    //used another for loop to loop over all the queries and displaying the output accordingly
+    for(let j=0; j<input.length - n - 1; j++){
+        // const matched = myMap[0][0] === input[input.length - n];
+        const name = input[input.length - n + j]
+        // console.log(name)
+        
+        //used the find method to check for the matching queries in the myMap array defined above
+        const foundNames = myMap.find((item) => item[0] === name);
+        // console.log(foundNames.length)
+        
+        //used if else to check if the desired elements exists 
+        if(foundNames === undefined){
+            console.log("Not found")
+        }else{
+            console.log(foundNames[0] + "=" + foundNames[1] )
+        }
+    }
+
+} 
